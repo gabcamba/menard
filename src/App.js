@@ -1,23 +1,54 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, { useState } from 'react'
 function App() {
+
+  const [points, setPoints] = useState([]);
+  const [popped, setPopped] = useState([]);
+
+  const handleClick = (e) => {
+    const { clientX: x, clientY: y } = e;
+    const point = { x, y }
+
+    const newPoints = [...points, point]
+    setPoints(newPoints)
+  };
+
+  const handleUndo = () => {
+    const currentPoints = [...points]
+    const poppedPoint = currentPoints.pop()
+
+    const newPoppedArray = [...popped, poppedPoint];
+    setPopped(newPoppedArray)
+    setPoints(currentPoints)
+  };
+
+  const handleRedo = () => {
+    const poppedArray = [...popped];
+    const lastPoppedItem = poppedArray.pop();
+
+    const newPointsArray = [...points, lastPoppedItem];
+    setPoints(newPointsArray);
+    setPopped(poppedArray)
+
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <button disabled={!points.length} onClick={handleUndo}>UNDO</button>
+        <button disabled={!popped.length} onClick={handleRedo}>REDO</button>
+      </div>
+      <div className='points-container' onClick={handleClick}>
+        {
+          points.map(point => (
+            // <div style={{ borderRadius: '50%', height: '10px', width: '10px', backgroundColor: 'white', left: point.x, top: point.y, position: 'absolute' }}>
+            // </div>
+            <img style={{ borderRadius: '50%', height: '100px', width: '100px', backgroundColor: 'white', left: point.x, top: point.y, position: 'absolute' }} alt='menard' src={require('./assets/IMG_3133.png')} />
+          
+          ))
+        }
+      </div>
+
     </div>
   );
 }
