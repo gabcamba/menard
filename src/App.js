@@ -39,6 +39,7 @@ function App() {
         <button disabled={!popped.length} onClick={handleRedo}>REDO</button>
       </div>
       <p>NEW CHANGES HERE</p>
+      <p>THIS CHANGES IS IN GAB NEW FEATURE BRANCH ONLY</p>
       <div className='points-container' onClick={handleClick}>
         {
           points.map(point => (
