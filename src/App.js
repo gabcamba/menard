@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from 'react'
 function App() {
 
+  console.log("TEST!")
   const [points, setPoints] = useState([]);
   const [popped, setPopped] = useState([]);
 
