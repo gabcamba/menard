@@ -38,13 +38,13 @@ function App() {
         <button disabled={!points.length} onClick={handleUndo}>UNDO</button>
         <button disabled={!popped.length} onClick={handleRedo}>REDO</button>
       </div>
+      <p>NEW CHANGES HERE</p>
       <div className='points-container' onClick={handleClick}>
         {
           points.map(point => (
             // <div style={{ borderRadius: '50%', height: '10px', width: '10px', backgroundColor: 'white', left: point.x, top: point.y, position: 'absolute' }}>
             // </div>
             <img style={{ borderRadius: '50%', height: '100px', width: '100px', backgroundColor: 'white', left: point.x, top: point.y, position: 'absolute' }} alt='menard' src={require('./assets/IMG_3133.png')} />
-          
           ))
         }
       </div>
