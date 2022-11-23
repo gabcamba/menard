@@ -40,6 +40,7 @@ function App() {
       </div>
       <p>NEW CHANGES HERE</p>
       <p>ANOTHER NEW CHANGES HERE</p>
+      <p>ANOTHER NEW NEW CHANGES HERE</p>
       <div className='points-container' onClick={handleClick}>
         {
           points.map(point => (
