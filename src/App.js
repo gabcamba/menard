@@ -2,11 +2,11 @@ import './App.css';
 import React, { useState } from 'react'
 function App() {
 
-  console.log("TEST!")
   const [points, setPoints] = useState([]);
   const [popped, setPopped] = useState([]);
 
   const handleClick = (e) => {
+    console.log("gab gwapo")
     const { clientX: x, clientY: y } = e;
     const point = { x, y }
 
@@ -42,6 +42,7 @@ function App() {
       <p>NEW CHANGES HERE</p>
       <p>ANOTHER NEW CHANGES HERE</p>
       <p>ANOTHER NEW NEW CHANGES HERE</p>
+      <p>GAB BRANCH ONLY</p>
       <div className='points-container' onClick={handleClick}>
         {
           points.map(point => (
