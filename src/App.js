@@ -48,7 +48,7 @@ function App() {
           points.map(point => (
             // <div style={{ borderRadius: '50%', height: '10px', width: '10px', backgroundColor: 'white', left: point.x, top: point.y, position: 'absolute' }}>
             // </div>
-            <img style={{ borderRadius: '50%', height: '100px', width: '100px', backgroundColor: 'white', left: point.x, top: point.y, position: 'absolute' }} alt='menard' src={require('./assets/IMG_3133.png')} />
+            <img style={{ borderRadius: '50%', height: '100px', width: '100px', backgroundColor: 'white', left: point.x, top: point.y, position: 'absolute' }} alt='menard' src={require('./assets/IMG_3134.png')} />
           ))
         }
       </div>
